@@ -1,5 +1,3 @@
-# README
-
 ## Paste Guard
 
 A browser extension that displays a confirmation before pasting content on any website, allowing you to have control over the paste action. Compatible with Google Chrome and Mozilla Firefox using `manifest_version: 3`.

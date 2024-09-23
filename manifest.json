@@ -1,12 +1,10 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "Confirmação de Colagem",
   "version": "1.0",
-  "description": "Exibe uma confirmação antes de colar conteúdo da área de transferência em qualquer site.",
-  "permissions": ["clipboardRead", "clipboardWrite", "<all_urls>"],
-  "background": {
-    "scripts": ["background.js"]
-  },
+  "description": "Exibe uma confirmação antes de colar conteúdo em qualquer site.",
+  "permissions": [],
+  "host_permissions": ["<all_urls>"],
   "content_scripts": [
     {
       "matches": ["<all_urls>"],

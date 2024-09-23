@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "Confirmação de Colagem",
+  "name": "Paste Guard",
   "version": "1.0",
-  "description": "Exibe uma confirmação antes de colar conteúdo em qualquer site.",
+  "description": "Display a confirmation before pasting content into any website.",
   "permissions": [],
   "host_permissions": ["<all_urls>"],
   "content_scripts": [

@@ -1,5 +1,5 @@
 document.addEventListener('paste', function(event) {
-  if (!confirm('Você deseja colar o conteúdo da área de transferência?')) {
+  if (!confirm('Do you want to paste the contents of the clipboard?')) {
     event.preventDefault();
   }
 });

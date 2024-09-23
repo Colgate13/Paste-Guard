@@ -32,7 +32,5 @@ document.addEventListener('paste', function(event) {
         alert('Não foi possível acessar a área de transferência.');
       }
     });
-  } else {
-    alert('Ação de colar cancelada.');
   }
 });

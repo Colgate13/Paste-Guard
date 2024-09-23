@@ -3,7 +3,29 @@
   "name": "Paste Guard",
   "version": "1.0",
   "description": "Display a confirmation before pasting content into any website.",
-  "permissions": [],
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting"
+  ],
+  "background": {
+    "scripts": [
+      "libs/browser-polyfill.min.js"
+    ]
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "Paste-Guard@velloware.com"
+    }
+  },
+  "action": {
+    "default_popup": "src/view/popup.html",
+    "default_icon": {
+      "16": "src/icons/clipboard.png",
+      "32": "src/icons/clipboard.png",
+      "48": "src/icons/clipboard.png"
+    }
+  },
   "host_permissions": ["<all_urls>"],
   "content_scripts": [
     {
@@ -11,5 +33,11 @@
       "js": ["src/index.js"],
       "run_at": "document_start"
     }
-  ]
+  ],
+  "icons": {
+    "16": "src/icons/clipboard.png",
+    "32": "src/icons/clipboard.png",
+    "48": "src/icons/clipboard.png",
+    "128": "src/icons/clipboard.png"
+  }
 }

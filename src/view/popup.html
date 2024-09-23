@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Paste Guard Configurações</title>
+  <style>
+    /* Estilos globais para o Dark Mode */
+    body {
+      font-family: Arial, sans-serif;
+      min-width: 250px;
+      background-color: #121212;
+      color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 0;
+    }
+
+    h2 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+
+    /* Estilização do botão */
+    #toggle-button {
+      background-color: #1e88e5;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 10px;
+      transition: background-color 0.3s ease;
+      margin-top: 10px;
+    }
+
+    /* Estado desabilitado do botão */
+    #toggle-button:disabled {
+      background-color: #424242;
+      cursor: not-allowed;
+    }
+
+    /* Efeito hover no botão */
+    #toggle-button:hover:not(:disabled) {
+      background-color: #1565c0;
+    }
+  </style>
+</head>
+<body>
+  <h2>Paste Guard</h2>
+  <p id="status">Carregando...</p>
+  <button id="toggle-button" disabled>Carregando...</button>
+
+  <script src="../popup.js"></script>
+</body>
+</html>

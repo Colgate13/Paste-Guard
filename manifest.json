@@ -10,7 +10,7 @@
   ],
   "background": {
     "scripts": [
-      "libs/browser-polyfill.min.js"
+      "src/libs/browser-polyfill.min.js"
     ]
   },
   "browser_specific_settings": {

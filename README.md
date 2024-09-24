@@ -12,6 +12,7 @@ A browser extension that displays a confirmation before pasting content on any w
   - [Mozilla Firefox](#mozilla-firefox)
 - [How It Works](#how-it-works)
 - [Considerations](#considerations)
+- [Privacy policies](#privacy-policies)
 - [License](#license)
 
 ---
@@ -79,6 +80,42 @@ This extension intercepts the paste (`paste`) event on any website and displays 
 - **Permissions:**
 
   - The extension does not require special permissions, making it more secure and less invasive.
+
+---
+
+## Privacy policies
+
+**Privacy Policy for the "Paste Guardian" Extension**
+
+**1. Information Collection**
+
+- **Personal Information**: The extension **does not** collect, store, or transmit any personally identifiable information.
+- **Usage Data**: The extension stores a list of allowed sites for pasting ("allowedSites") locally in your browser. This data is used solely to customize the extension's behavior based on your preferences.
+
+**2. Use of Information**
+
+- The information stored is used exclusively to:
+  - Determine when to display a confirmation prompt when you attempt to paste content on a website.
+  - Manage the list of websites where pasting is permitted without confirmation.
+
+**3. Information Sharing**
+
+- **We do not share** any information with third parties.
+- All data remains stored locally on your device and is not transmitted to any external servers.
+
+**4. Information Security**
+
+- We employ industry-standard measures to protect the information stored by the extension.
+- However, please note that no security measure is entirely foolproof. We recommend keeping your browser and extensions up to date.
+
+**5. Consent**
+
+- By using the extension, you agree to the terms outlined in this privacy policy.
+
+**6. Changes to This Privacy Policy**
+
+- We may update this privacy policy from time to time.
+- Any changes will be posted on this page with an updated revision date.
 
 ---
 

@@ -1,4 +1,3 @@
-// Detecta se o objeto 'browser' ou 'chrome' está disponível
 const browserAPI = window.browser || chrome;
 
 function pasteGuardHandler(event) {

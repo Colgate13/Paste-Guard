@@ -1,6 +1,11 @@
+// Detecta se o objeto 'browser' ou 'chrome' está disponível
+const browserAPI = window.browser || chrome;
+
 function pasteGuardHandler(event) {
-  if (!confirm('Você deseja colar o conteúdo da área de transferência?')) {
+  if (!confirm("Você deseja colar o conteúdo da área de transferência?")) {
     event.preventDefault();
+    event.stopPropagation();
+    event.stopImmediatePropagation();
   }
 }
 
@@ -9,24 +14,22 @@ function updateEventListener(allowedSites) {
 
   if (!allowedSites.includes(currentHost)) {
     if (!window.pasteGuardListenerAdded) {
-      document.addEventListener('paste', pasteGuardHandler);
+      document.addEventListener("paste", pasteGuardHandler, true);
       window.pasteGuardListenerAdded = true;
     }
-  } else {
-    if (window.pasteGuardListenerAdded) {
-      document.removeEventListener('paste', pasteGuardHandler);
-      window.pasteGuardListenerAdded = false;
-    }
+  } else if (window.pasteGuardListenerAdded) {
+    document.removeEventListener("paste", pasteGuardHandler, true);
+    window.pasteGuardListenerAdded = false;
   }
 }
 
-chrome.storage.sync.get(['allowedSites'], function(result) {
+browserAPI.storage.sync.get(["allowedSites"], function (result) {
   const allowedSites = result.allowedSites || [];
   updateEventListener(allowedSites);
 });
 
-chrome.storage.onChanged.addListener(function(changes, namespace) {
-  if (namespace === 'sync' && changes.allowedSites) {
+browserAPI.storage.onChanged.addListener(function (changes, namespace) {
+  if (namespace === "sync" && changes.allowedSites) {
     const allowedSites = changes.allowedSites.newValue || [];
     updateEventListener(allowedSites);
   }

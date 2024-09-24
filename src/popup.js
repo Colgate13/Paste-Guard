@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', function () {
   const statusText = document.getElementById('status');
   const toggleButton = document.getElementById('toggle-button');
 
-  // Detecta se o objeto 'browser' ou 'chrome' está disponível
   const browserAPI = window.browser || chrome;
 
   browserAPI.tabs.query({active: true, currentWindow: true}, function(tabs) {
@@ -19,15 +18,13 @@ document.addEventListener('DOMContentLoaded', function () {
       toggleButton.disabled = false;
 
       toggleButton.addEventListener('click', function() {
-        isAllowed = !isAllowed; // Inverte o estado
-
+        isAllowed = !isAllowed;
         if (isAllowed) {
           allowedSites.push(currentHost);
         } else {
           allowedSites = allowedSites.filter(site => site !== currentHost);
         }
 
-        // Salva a lista atualizada
         browserAPI.storage.sync.set({allowedSites: allowedSites}, function() {
           updateUI(isAllowed);
         });

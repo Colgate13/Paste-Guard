@@ -9,30 +9,30 @@ document.addEventListener('DOMContentLoaded', function () {
     const url = new URL(activeTab.url);
     const currentHost = url.hostname;
 
-    browserAPI.storage.sync.get('allowedSites', function(result) {
-      let allowedSites = result.allowedSites || [];
+    browserAPI.storage.sync.get('protectedSites', function(result) {
+      let protectedSites = result.protectedSites || [];
 
-      let isAllowed = allowedSites.includes(currentHost);
-      updateUI(isAllowed);
+      let isProtected = protectedSites.includes(currentHost);
+      updateUI(isProtected);
 
       toggleButton.disabled = false;
 
       toggleButton.addEventListener('click', function() {
-        isAllowed = !isAllowed;
-        if (isAllowed) {
-          allowedSites.push(currentHost);
+        isProtected = !isProtected;
+        if (isProtected) {
+          protectedSites.push(currentHost);
         } else {
-          allowedSites = allowedSites.filter(site => site !== currentHost);
+          protectedSites = protectedSites.filter(site => site !== currentHost);
         }
 
-        browserAPI.storage.sync.set({allowedSites: allowedSites}, function() {
-          updateUI(isAllowed);
+        browserAPI.storage.sync.set({protectedSites: protectedSites}, function() {
+          updateUI(isProtected);
         });
       });
 
-      function updateUI(isAllowed) {
-        statusText.textContent = `Colar está ${isAllowed ? 'permitido' : 'protegido'} neste site.`;
-        toggleButton.textContent = isAllowed ? 'Desativar Colagem Automática' : 'Ativar Colagem Automática';
+      function updateUI(isProtected) {
+        statusText.textContent = `Proteção de colagem está ${isProtected ? 'ativa' : 'inativa'} neste site.`;
+        toggleButton.textContent = isProtected ? 'Desativar Proteção de Colagem' : 'Ativar Proteção de Colagem';
       }
     });
   });

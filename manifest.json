@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Paste Guard",
-  "version": "1.0",
+  "version": "2.0",
   "description": "Display a confirmation before pasting content into any website.",
   "permissions": [
     "storage",
